@@ -13,6 +13,8 @@ pipeline {
       steps {
         sh './mvnw quarkus:add-extension -Dextensions="container-image-jib"'
       }
+    }
+    stage("Deploy") {
       steps {
         sh '''
            ./mvnw package -DskipTests \
